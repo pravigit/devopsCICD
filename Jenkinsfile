@@ -17,11 +17,6 @@ stages{
  {
      steps {sh 'mvn package'}
  } 
-
-stage('Results')
-  {
-     steps { archiveArtifacts artifacts: '**/*.war, followSumlinks: false'}
-  } 
  
 stage('Upload to Nexus')
 {

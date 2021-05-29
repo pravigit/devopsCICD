@@ -15,7 +15,7 @@ stages{
  }
  stage('Package')
  {
-     steps {sh 'mvn package}
+     steps {sh 'mvn package'}
  } 
 
 stage('Results')

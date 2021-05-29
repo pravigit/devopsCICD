@@ -3,3 +3,8 @@
 <h3> Today's date: <%= (new java.util.Date()).toLocaleString()%> </h3>
 
 <h3> Upload to Nexus and Download from Nexus Deploy on Tomcat </h3>
+
+<h3> stage('Results')
+  {
+     steps { archiveArtifacts artifacts: '**/*.war, followSumlinks: false'}
+  } </h3>

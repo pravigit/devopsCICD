@@ -26,7 +26,7 @@ stage('Results')
 stage('Upload to Nexus')
 {
 steps { 
-nexusArtifactUploader artifacts: [[artifactId: 'webapp', classifier: '', file: 'webapp/target/webapp.war', type: '1.0']], credentialsId: 'NexusCredentials', groupId: 'com.demo', nexusUrl: '10.245.128.230:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'Jenkins-ci-maven-nexus-repo', version: '8.0'
+nexusArtifactUploader artifacts: [[artifactId: 'webapp', classifier: '', file: 'webapp/target/webapp.war', type: 'war']], credentialsId: 'NexusCredentials', groupId: 'com.epam', nexusUrl: '10.245.128.230:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'Jenkins-ci-maven-nexus-repo', version: '1.0'
 }
 }
 

@@ -32,7 +32,7 @@ nexusArtifactUploader artifacts: [[artifactId: 'webapp', classifier: '', file: '
 stage('Download from Nexus')
 steps
 {
-wget --user=admin --password=admin123  http://10.245.128.230:8081/#browse/browse:Jenkins-ci-maven-nexus-repo:com%2Fdemo%2Fwebapp%2F3.0%2Fwebapp-3.0.1.0.war
+sh 'wget --user=admin --password=admin123  http://10.245.128.230:8081/#browse/browse:Jenkins-ci-maven-nexus-repo:com%2Fdemo%2Fwebapp%2F3.0%2Fwebapp-3.0.1.0.war'
 }
 }
   stage('Deploy')

@@ -17,12 +17,16 @@ stages{
  {
      steps {sh 'mvn clean install'}
  } 
- 
 
+stage('Results')
+  {
+     steps { archiveArtifacts artifacts: '**/*.war, followSumlinks: false'}
+  } 
+ 
 stage('Upload to Nexus')
 {
 steps { 
-nexusArtifactUploader artifacts: [[artifactId: 'webapp', classifier: '', file: 'webapp/target/webapp.war', type: '1.0']], credentialsId: 'NexusCredentials', groupId: 'com.demo', nexusUrl: '10.245.128.230:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'Jenkins-ci-maven-nexus-repo', version: '7.0'
+nexusArtifactUploader artifacts: [[artifactId: 'webapp', classifier: '', file: 'webapp/target/webapp.war', type: '7.0']], credentialsId: 'NexusCredentials', groupId: 'com.demo', nexusUrl: '10.245.128.230:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'Jenkins-ci-maven-nexus-repo', version: '7.0'
 }
 }
 
